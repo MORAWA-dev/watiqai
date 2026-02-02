@@ -19,6 +19,17 @@ assets/logos/watiq_ai_minimalist_logo.png
 assets/logos/watiq_ai_minimalist_logo_v3.png
 assets/logos/watiq_logo_2.png
 
+# Documentation (not needed for website)
+docs/
+README.md
+DEVELOPMENT.md
+description.md
+
+# Config files (not needed for website)
+package.json
+jsconfig.json
+.editorconfig
+
 # Environment files
 .env
 .env.local
