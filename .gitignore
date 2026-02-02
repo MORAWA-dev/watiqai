@@ -7,6 +7,13 @@ dist/
 build/
 .cache/
 
+# Large files (presentations, documents)
+assets/presentations/
+assets/documents/
+
+# Unnecessary images
+src/images/
+
 # Environment files
 .env
 .env.local
