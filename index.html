@@ -1017,7 +1017,7 @@
         </section>
 
         <!-- Scroll to Top Button -->
-        <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">
+        <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
             <i class="fa-solid fa-arrow-up"></i>
         </button>
 
@@ -1093,23 +1093,36 @@
                 offset: 50
             });
 
-            // Scroll to Top Button
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 400) {
-                    scrollTopBtn.classList.add('visible');
-                } else {
-                    scrollTopBtn.classList.remove('visible');
-                }
-            });
+            // Scroll to Top Button - Fixed for global scope
+            (function() {
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                
+                if (scrollTopBtn) {
+                    // Show/hide button on scroll with throttling for performance
+                    let ticking = false;
+                    window.addEventListener('scroll', function() {
+                        if (!ticking) {
+                            window.requestAnimationFrame(function() {
+                                if (window.pageYOffset > 400) {
+                                    scrollTopBtn.classList.add('visible');
+                                } else {
+                                    scrollTopBtn.classList.remove('visible');
+                                }
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    });
 
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
+                    // Click handler
+                    scrollTopBtn.addEventListener('click', function() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            })();
         </script>
 
         <!-- Structured Data for SEO -->
