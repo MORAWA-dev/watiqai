@@ -82,6 +82,24 @@
             as="image"
         />
 
+        <!-- Font Awesome Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- AOS - Animate On Scroll -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.css"
+            integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
         <!-- Styles -->
         <link rel="stylesheet" href="src/css/styles.css" />
 
@@ -165,15 +183,15 @@
                     <!-- Trust Badges -->
                     <div class="trust-badges">
                         <div class="trust-badge">
-                            <span class="badge-icon">🔒</span>
+                            <span class="badge-icon"><i class="fa-solid fa-lock"></i></span>
                             <span>Bank-Grade Security</span>
                         </div>
                         <div class="trust-badge">
-                            <span class="badge-icon">⚖️</span>
+                            <span class="badge-icon"><i class="fa-solid fa-scale-balanced"></i></span>
                             <span>Bank Al-Maghrib Compliant</span>
                         </div>
                         <div class="trust-badge">
-                            <span class="badge-icon">⚡</span>
+                            <span class="badge-icon"><i class="fa-solid fa-bolt"></i></span>
                             <span>Real-Time Processing</span>
                         </div>
                     </div>
@@ -182,8 +200,21 @@
             <div class="hero-decoration"></div>
         </section>
 
+        <!-- Challenge Banner -->
+        <section class="challenge-banner" data-aos="fade-up">
+            <div class="container">
+                <div class="banner-content">
+                    <span class="banner-icon"><i class="fa-solid fa-trophy"></i></span>
+                    <div class="banner-text">
+                        <strong>Built for "L'Innovation au Service de la Banque de Demain"</strong>
+                        <span>Pioneering localized AI to secure the Bank of Tomorrow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Problem Section -->
-        <section id="problem" class="section problem-section">
+        <section id="problem" class="section problem-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">The Challenge</span>
@@ -291,7 +322,7 @@
         </section>
 
         <!-- Solution Section -->
-        <section id="solution" class="section solution-section">
+        <section id="solution" class="section solution-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Our Technology</span>
@@ -407,7 +438,7 @@
         </section>
 
         <!-- Fraud Sandbox Section -->
-        <section id="fraud-sandbox" class="section sandbox-section">
+        <section id="fraud-sandbox" class="section sandbox-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Live Demo</span>
@@ -483,7 +514,7 @@
         </section>
 
         <!-- Impact Section -->
-        <section id="impact" class="section impact-section">
+        <section id="impact" class="section impact-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Measurable Results</span>
@@ -643,7 +674,7 @@
         </section>
 
         <!-- Competitive Moat Section -->
-        <section id="moat" class="section moat-section">
+        <section id="moat" class="section moat-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Why WatiqAI Wins</span>
@@ -755,7 +786,7 @@
         </section>
 
         <!-- ROI Calculator Section -->
-        <section id="roi-calculator" class="section calculator-section">
+        <section id="roi-calculator" class="section calculator-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Calculate Your Savings</span>
@@ -808,7 +839,7 @@
         </section>
 
         <!-- Roadmap Section -->
-        <section id="roadmap" class="section roadmap-section">
+        <section id="roadmap" class="section roadmap-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Our Vision</span>
@@ -871,7 +902,7 @@
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="section faq-section">
+        <section id="faq" class="section faq-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Questions & Answers</span>
@@ -927,28 +958,68 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section id="contact" class="section cta-section">
+        <!-- Contact Section with Form -->
+        <section id="contact" class="section contact-section" data-aos="fade-up">
             <div class="container">
-                <div class="cta-content">
-                    <h2 class="cta-title">Shape the Bank of Tomorrow</h2>
-                    <p class="cta-description">
-                        Partner with WatiqAI to secure the future of finance in
-                        the Maghreb region
+                <div class="section-header">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2 class="section-title">Shape the Bank of Tomorrow</h2>
+                    <p class="section-subtitle">
+                        Partner with WatiqAI to secure the future of finance in the Maghreb region
                     </p>
-                    <div class="cta-buttons">
-                        <a
-                            href="mailto:contact@watiqai.app"
-                            class="btn-primary-large"
-                            >See Live Demo</a
-                        >
-                        <a href="#" class="btn-secondary-large"
-                            >Get Pitch Deck</a
-                        >
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>Interested in a demo, partnership, or just learning more about WatiqAI? Send us a message and we'll get back to you within 24 hours.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>contact@watiqai.app</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Casablanca, Morocco</span>
+                            </div>
+                        </div>
+                        <div class="cta-buttons" style="margin-top: var(--space-lg);">
+                            <a href="#sandbox" class="btn-secondary">
+                                <i class="fa-solid fa-play"></i> Watch Demo
+                            </a>
+                            <a href="#roi-calculator" class="btn-secondary">
+                                <i class="fa-solid fa-calculator"></i> Calculate ROI
+                            </a>
+                        </div>
                     </div>
+                    <form class="contact-form" action="https://formspree.io/f/mbdgezge" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company / Institution</label>
+                            <input type="text" id="company" name="company" placeholder="Bank or institution name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell us about your KYC needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary-large">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
+
+        <!-- Scroll to Top Button -->
+        <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
 
         <!-- Footer -->
         <footer class="footer">
@@ -964,41 +1035,82 @@
                             <span class="logo-text">WatiqAI</span>
                         </div>
                         <p>AI-Powered Document Intelligence for the Maghreb</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        </div>
                     </div>
                     <div class="footer-links">
                         <div class="footer-column">
                             <h4>Product</h4>
                             <ul>
                                 <li><a href="#solution">Features</a></li>
-                                <li><a href="#impact">Impact</a></li>
-                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#sandbox">Demo</a></li>
+                                <li><a href="#roi-calculator">ROI Calculator</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4>Company</h4>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Careers</a></li>
+                                <li><a href="#roadmap">Roadmap</a></li>
+                                <li><a href="#faq">FAQ</a></li>
                                 <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
-                            <h4>Legal</h4>
+                            <h4>Compliance</h4>
                             <ul>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of Service</a></li>
-                                <li><a href="#">Compliance</a></li>
+                                <li><a href="#">Privacy (Law 09-08)</a></li>
+                                <li><a href="#">CNDP Compliant</a></li>
+                                <li><a href="#">Bank Al-Maghrib</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
                     <p>&copy; 2026 WatiqAI. All rights reserved.</p>
+                    <p class="challenge-credit">
+                        <i class="fa-solid fa-trophy"></i>
+                        Built for L'Innovation au Service de la Banque de Demain
+                    </p>
                 </div>
             </div>
         </footer>
 
+        <!-- AOS Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <script src="src/js/script.js"></script>
+
+        <!-- Initialize AOS and Scroll to Top -->
+        <script>
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true,
+                offset: 50
+            });
+
+            // Scroll to Top Button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 400) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        </script>
 
         <!-- Structured Data for SEO -->
         <script type="application/ld+json">
