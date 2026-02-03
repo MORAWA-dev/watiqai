@@ -455,3 +455,103 @@ window.addEventListener('load', () => {
     document.documentElement.classList.remove('js-loading');
     document.documentElement.classList.add('js-loaded');
 });
+
+// ==========================================
+// ROI Calculator
+// ==========================================
+
+function calculateROI() {
+    // Get input values
+    const volume = parseFloat(document.getElementById('monthly-volume').value) || 5000;
+    const currentCost = parseFloat(document.getElementById('current-cost').value) || 50;
+    const fraudRate = parseFloat(document.getElementById('fraud-rate').value) || 2;
+    
+    // WatiqAI assumptions
+    const watiqaiCostPerVerification = 15; // 70% reduction from 50 MAD
+    const avgFraudLossPerIncident = 15000; // MAD
+    const fraudReductionRate = 0.85; // 85% fraud prevention
+    
+    // Calculate monthly cost savings
+    const currentMonthlyCost = volume * currentCost;
+    const watiqaiMonthlyCost = volume * watiqaiCostPerVerification;
+    const monthlyCostSavings = currentMonthlyCost - watiqaiMonthlyCost;
+    
+    // Calculate fraud prevention savings
+    const monthlyFraudIncidents = volume * (fraudRate / 100);
+    const currentFraudLoss = monthlyFraudIncidents * avgFraudLossPerIncident;
+    const reducedFraudLoss = currentFraudLoss * (1 - fraudReductionRate);
+    const monthlyFraudSavings = currentFraudLoss - reducedFraudLoss;
+    
+    // Total savings
+    const totalMonthlySavings = monthlyCostSavings + monthlyFraudSavings;
+    const annualSavings = totalMonthlySavings * 12;
+    
+    // Break-even calculation (assuming 100K implementation cost)
+    const implementationCost = 100000;
+    const breakEvenMonths = Math.ceil(implementationCost / totalMonthlySavings);
+    
+    // Format numbers
+    const formatMAD = (num) => {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1) + 'M MAD';
+        } else if (num >= 1000) {
+            return Math.round(num / 1000) + 'K MAD';
+        }
+        return Math.round(num) + ' MAD';
+    };
+    
+    // Update display with animation
+    animateResultValue('annual-savings', formatMAD(annualSavings));
+    animateResultValue('monthly-savings', formatMAD(monthlyCostSavings));
+    animateResultValue('fraud-savings', formatMAD(monthlyFraudSavings * 12));
+    animateResultValue('roi-months', breakEvenMonths + ' months');
+}
+
+function animateResultValue(elementId, newValue) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    element.style.transform = 'scale(1.1)';
+    element.style.transition = 'transform 0.3s ease';
+    element.textContent = newValue;
+    
+    setTimeout(() => {
+        element.style.transform = 'scale(1)';
+    }, 300);
+}
+
+// Initialize calculator on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Run initial calculation
+    if (document.getElementById('monthly-volume')) {
+        calculateROI();
+        
+        // Add input listeners for real-time updates
+        ['monthly-volume', 'current-cost', 'fraud-rate'].forEach(id => {
+            const input = document.getElementById(id);
+            if (input) {
+                input.addEventListener('input', debounce(calculateROI, 300));
+            }
+        });
+    }
+});
+
+// ==========================================
+// FAQ Accordion
+// ==========================================
+
+function toggleFaq(button) {
+    const faqItem = button.closest('.faq-item');
+    const allFaqItems = document.querySelectorAll('.faq-item');
+    
+    // Close other FAQs
+    allFaqItems.forEach(item => {
+        if (item !== faqItem) {
+            item.classList.remove('active');
+        }
+    });
+    
+    // Toggle current FAQ
+    faqItem.classList.toggle('active');
+}
+

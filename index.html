@@ -754,6 +754,179 @@
             </div>
         </section>
 
+        <!-- ROI Calculator Section -->
+        <section id="roi-calculator" class="section calculator-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Calculate Your Savings</span>
+                    <h2 class="section-title">ROI Calculator</h2>
+                    <p class="section-subtitle">
+                        See how much you could save with WatiqAI
+                    </p>
+                </div>
+                <div class="calculator-container">
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="monthly-volume">Monthly KYC Volume</label>
+                            <input type="number" id="monthly-volume" value="5000" min="100" max="100000">
+                            <span class="input-hint">verifications/month</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="current-cost">Current Cost per Verification</label>
+                            <input type="number" id="current-cost" value="50" min="10" max="200">
+                            <span class="input-hint">MAD</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="fraud-rate">Current Fraud Rate</label>
+                            <input type="number" id="fraud-rate" value="2" min="0.1" max="10" step="0.1">
+                            <span class="input-hint">% of verifications</span>
+                        </div>
+                        <button class="btn-calculate" onclick="calculateROI()">
+                            Calculate Savings
+                        </button>
+                    </div>
+                    <div class="calculator-results">
+                        <div class="result-card highlight">
+                            <div class="result-value" id="annual-savings">2.1M MAD</div>
+                            <div class="result-label">Annual Savings</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-value" id="monthly-savings">175K MAD</div>
+                            <div class="result-label">Monthly Cost Reduction</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-value" id="fraud-savings">1.27M MAD</div>
+                            <div class="result-label">Fraud Prevention Savings</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-value" id="roi-months">2 months</div>
+                            <div class="result-label">Break-Even Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="section roadmap-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Our Vision</span>
+                    <h2 class="section-title">Product Roadmap</h2>
+                    <p class="section-subtitle">
+                        From MVP to regional leader in AI-powered KYC
+                    </p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker">✓</div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Q4 2025</span>
+                            <h3>MVP Development</h3>
+                            <ul>
+                                <li>Core KYC verification engine</li>
+                                <li>Moroccan CNIE support</li>
+                                <li>Initial fraud detection models</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item current">
+                        <div class="timeline-marker">●</div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Q1 2026</span>
+                            <h3>Pilot Program</h3>
+                            <ul>
+                                <li>Partner bank integration</li>
+                                <li>Real-world testing & validation</li>
+                                <li>Model refinement with live data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item future">
+                        <div class="timeline-marker">○</div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Q2 2026</span>
+                            <h3>Market Launch</h3>
+                            <ul>
+                                <li>Commercial availability</li>
+                                <li>Multi-bank deployment</li>
+                                <li>Passport & driver license support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item future">
+                        <div class="timeline-marker">○</div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Q3-Q4 2026</span>
+                            <h3>Regional Expansion</h3>
+                            <ul>
+                                <li>Tunisia & Algeria document support</li>
+                                <li>Telecom & insurance sectors</li>
+                                <li>API marketplace launch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Questions & Answers</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How long does implementation take?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Typical implementation takes 4-6 weeks including API integration, customization for your specific document types, and staff training. We provide dedicated support throughout the process.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How is data security handled?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We use AES-256 encryption for all documents and personal data. Data can be hosted in Morocco for full sovereignty. We are CNDP compliant (Law 09-08) and follow Bank Al-Maghrib security guidelines.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What documents are supported?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We currently support Moroccan CNIE (front & back), passports, and proof of address documents. Driver licenses and additional regional documents are on our Q2 2026 roadmap.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What languages does the OCR support?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our multilingual engine supports Arabic, French, and Darija. We handle Moroccan naming conventions and landmark-based addresses with specialized training data.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What's the pricing model?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer flexible pricing based on verification volume. Enterprise plans include dedicated support, custom integrations, and on-premise deployment options. Contact us for a tailored quote.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section id="contact" class="section cta-section">
             <div class="container">
